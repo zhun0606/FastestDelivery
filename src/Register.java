@@ -289,6 +289,7 @@ public class Register extends javax.swing.JFrame {
             this.setVisible(false);
             //here to back to Main Menu
             //Main menu will added in later stories
+            
         }
     }//GEN-LAST:event_btnCancelActionPerformed
     
