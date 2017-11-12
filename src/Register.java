@@ -263,22 +263,19 @@ public class Register extends javax.swing.JFrame {
             };
         }
     }//GEN-LAST:event_btnComfirmActionPerformed
-
     private void txtNameKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNameKeyTyped
         textOnly(evt);
     }//GEN-LAST:event_txtNameKeyTyped
     private void txtICKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtICKeyTyped
         numberOnly(evt);
     }//GEN-LAST:event_txtICKeyTyped
-
     private void txtHomePhoneKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtHomePhoneKeyTyped
         numberOnly(evt);
     }//GEN-LAST:event_txtHomePhoneKeyTyped
-
     private void txtCellPhoneKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCellPhoneKeyTyped
         numberOnly(evt);
     }//GEN-LAST:event_txtCellPhoneKeyTyped
-
+    
     private boolean checkInput(){
         boolean isChecked = true;
         
