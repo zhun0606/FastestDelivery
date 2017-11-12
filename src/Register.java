@@ -287,6 +287,7 @@ public class Register extends javax.swing.JFrame {
         if(comfirm == JOptionPane.YES_OPTION){
             JOptionPane.showMessageDialog(null, "Registration Cancelled");
             this.setVisible(false);
+            new Menu().setVisible(true);
             //here to back to Main Menu
             //Main menu will added in later stories
         }
