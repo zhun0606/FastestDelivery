@@ -78,10 +78,8 @@
                           <Component id="jrbFemale" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <Component id="txtIC" alignment="0" min="-2" pref="130" max="-2" attributes="0"/>
-                      <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
-                          <Component id="txtHomePhone" alignment="0" pref="125" max="32767" attributes="0"/>
-                          <Component id="txtCellPhone" alignment="0" max="32767" attributes="0"/>
-                      </Group>
+                      <Component id="txtHomePhone" alignment="0" pref="125" max="32767" attributes="0"/>
+                      <Component id="txtCellPhone" alignment="0" max="32767" attributes="0"/>
                       <Component id="txaAddress" max="32767" attributes="0"/>
                   </Group>
               </Group>

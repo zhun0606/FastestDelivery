@@ -9,7 +9,7 @@
  * @author zhun0606
  */
 public class Register extends javax.swing.JFrame {
-
+    Employee employee[];
     /**
      * Creates new form Register
      */
