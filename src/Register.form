@@ -56,19 +56,18 @@
                   <Component id="label14" alignment="0" min="-2" max="-2" attributes="0"/>
                   <Component id="label15" alignment="0" min="-2" max="-2" attributes="0"/>
                   <Group type="102" alignment="0" attributes="0">
-                      <Component id="button1" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnComfirm" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="button2" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnReset" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace min="-2" pref="7" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="button3" min="-2" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="1" max="-2" attributes="0">
                       <Component id="txtDOB" alignment="0" max="32767" attributes="0"/>
                       <Component id="txtName" alignment="0" max="32767" attributes="0"/>
                       <Component id="txtWorkingPosition" alignment="0" max="32767" attributes="0"/>
-                      <Component id="txtcmPassword" alignment="0" max="32767" attributes="0"/>
+                      <Component id="txtCfmPassword" alignment="0" max="32767" attributes="0"/>
                       <Component id="txtPassword" alignment="0" max="32767" attributes="0"/>
                       <Component id="txtEmail" alignment="0" min="-2" pref="125" max="-2" attributes="0"/>
                       <Component id="txtUsername" alignment="0" pref="200" max="32767" attributes="0"/>
@@ -82,8 +81,9 @@
                       <Component id="txtCellPhone" alignment="0" max="32767" attributes="0"/>
                       <Component id="txaAddress" max="32767" attributes="0"/>
                   </Group>
+                  <Component id="btnCancel" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="0" pref="32" max="32767" attributes="0"/>
+              <EmptySpace min="0" pref="29" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -103,7 +103,7 @@
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="label5" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Component id="txtcmPassword" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtCfmPassword" alignment="0" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
@@ -155,9 +155,9 @@
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="button1" min="-2" max="-2" attributes="0"/>
-                  <Component id="button2" min="-2" max="-2" attributes="0"/>
-                  <Component id="button3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnComfirm" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnReset" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnCancel" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace pref="20" max="32767" attributes="0"/>
           </Group>
@@ -185,25 +185,28 @@
     </Component>
     <Component class="java.awt.TextField" name="txtPassword">
     </Component>
-    <Component class="java.awt.Button" name="button1">
+    <Component class="java.awt.Button" name="btnComfirm">
       <Properties>
         <Property name="label" type="java.lang.String" value="Comfirm"/>
         <Property name="name" type="java.lang.String" value="" noResource="true"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnComfirmActionPerformed"/>
+      </Events>
     </Component>
     <Component class="java.awt.Label" name="label5">
       <Properties>
         <Property name="text" type="java.lang.String" value="Comfirm Password"/>
       </Properties>
     </Component>
-    <Component class="java.awt.Button" name="button2">
+    <Component class="java.awt.Button" name="btnReset">
       <Properties>
         <Property name="label" type="java.lang.String" value="Reset"/>
       </Properties>
     </Component>
-    <Component class="java.awt.TextField" name="txtcmPassword">
+    <Component class="java.awt.TextField" name="txtCfmPassword">
     </Component>
-    <Component class="java.awt.Button" name="button3">
+    <Component class="java.awt.Button" name="btnCancel">
       <Properties>
         <Property name="label" type="java.lang.String" value="Cancel"/>
       </Properties>
