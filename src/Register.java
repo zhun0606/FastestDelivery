@@ -1,4 +1,4 @@
-import java.awt.event.KeyEvent;
+import javax.swing.JOptionPane;
 import java.util.ArrayList;
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -14,6 +14,7 @@ public class Register extends javax.swing.JFrame {
     ArrayList<Employee> employee = new ArrayList<>();
     public Register() {
         initComponents();
+        this.setTitle("Employee Registration");
     }
 
     /**
@@ -86,6 +87,11 @@ public class Register extends javax.swing.JFrame {
         btnReset.setLabel("Reset");
 
         btnCancel.setLabel("Cancel");
+        btnCancel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCancelActionPerformed(evt);
+            }
+        });
 
         label7.setText("Name");
 
@@ -141,7 +147,6 @@ public class Register extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(label1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(label2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(label5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(label11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -152,7 +157,8 @@ public class Register extends javax.swing.JFrame {
                             .addComponent(label12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(label15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(label13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(label14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(label14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(label1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(22, 22, 22)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
@@ -275,7 +281,35 @@ public class Register extends javax.swing.JFrame {
     private void txtCellPhoneKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCellPhoneKeyTyped
         numberOnly(evt);
     }//GEN-LAST:event_txtCellPhoneKeyTyped
+
+    private void btnCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelActionPerformed
+        int comfirm = JOptionPane.showConfirmDialog(null, "Comfirm?", "Do you want to Cancel Registration?", JOptionPane.YES_NO_OPTION);
+        if(comfirm == JOptionPane.YES_OPTION){
+            JOptionPane.showMessageDialog(null, "Registration Cancelled");
+            this.setVisible(false);
+            //here to back to Main Menu
+            //Main menu will added in later stories
+        }
+    }//GEN-LAST:event_btnCancelActionPerformed
     
+    private void clearAll(){
+        jrbMale.setSelected(false);
+        jrbFemale.setSelected(false);
+        
+        txtUsername.setText("");
+        txtPassword.setText("");
+        txtCfmPassword.setText("");
+        txtWorkingPosition.setText("");
+        
+        txtName.setText("");
+        txtIC.setText("");
+        txtDOB.setText("");
+        txtHomePhone.setText("");
+        txtCellPhone.setText("");
+        txtEmail.setText("");
+        
+        txaAddress.setText("");
+    }
     private boolean checkInput(){
         boolean isChecked = true;
         
