@@ -43,49 +43,60 @@
           <Group type="102" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="label1" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Component id="label2" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Component id="label5" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Component id="label11" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Component id="label7" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Component id="label8" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Component id="label9" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Component id="label10" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Component id="label12" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Component id="label13" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Component id="label14" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Component id="label15" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Group type="102" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="label1" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="label2" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="label5" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="label11" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="label7" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="label8" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="label9" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="label10" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="label12" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="label15" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="label13" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="label14" alignment="0" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" attributes="0">
+                              <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                  <Component id="txtDOB" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="txtName" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="txtWorkingPosition" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="txtCfmPassword" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="txtPassword" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="txtUsername" alignment="0" pref="200" max="32767" attributes="0"/>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="jrbMale" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="jrbFemale" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Component id="txaAddress" max="32767" attributes="0"/>
+                                  <Component id="txtEmail" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="txtIC" alignment="0" min="-2" pref="125" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="0" pref="24" max="32767" attributes="0"/>
+                          </Group>
+                          <Group type="102" attributes="0">
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Component id="txtHomePhone" pref="125" max="32767" attributes="0"/>
+                                  <Component id="txtCellPhone" max="32767" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="32767" attributes="0"/>
+                          </Group>
+                      </Group>
+                  </Group>
                   <Group type="102" alignment="0" attributes="0">
-                      <Component id="button1" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnComfirm" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="button2" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnReset" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="btnCancel" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace min="-2" pref="7" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="button3" min="-2" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                      <Component id="txtDOB" alignment="0" max="32767" attributes="0"/>
-                      <Component id="txtName" alignment="0" max="32767" attributes="0"/>
-                      <Component id="txtWorkingPosition" alignment="0" max="32767" attributes="0"/>
-                      <Component id="txtcmPassword" alignment="0" max="32767" attributes="0"/>
-                      <Component id="txtPassword" alignment="0" max="32767" attributes="0"/>
-                      <Component id="txtEmail" alignment="0" min="-2" pref="125" max="-2" attributes="0"/>
-                      <Component id="txtUsername" alignment="0" pref="200" max="32767" attributes="0"/>
-                      <Group type="102" alignment="0" attributes="0">
-                          <Component id="jrbMale" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jrbFemale" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <Component id="txtIC" alignment="0" min="-2" pref="130" max="-2" attributes="0"/>
-                      <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
-                          <Component id="txtHomePhone" alignment="0" pref="125" max="32767" attributes="0"/>
-                          <Component id="txtCellPhone" alignment="0" max="32767" attributes="0"/>
-                      </Group>
-                      <Component id="txaAddress" max="32767" attributes="0"/>
-                  </Group>
-              </Group>
-              <EmptySpace min="0" pref="32" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -105,7 +116,7 @@
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="label5" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Component id="txtcmPassword" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtCfmPassword" alignment="0" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
@@ -140,28 +151,32 @@
                   <Component id="txaAddress" alignment="0" min="-2" pref="100" max="-2" attributes="0"/>
                   <Component id="label12" alignment="0" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="txtHomePhone" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Component id="label13" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Group type="102" attributes="0">
+                      <EmptySpace max="32767" attributes="0"/>
+                      <Component id="label15" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="label13" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="label14" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="txtEmail" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="txtHomePhone" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="txtCellPhone" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
+                  </Group>
               </Group>
-              <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="label14" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Component id="txtCellPhone" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnComfirm" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnReset" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnCancel" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="label15" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Component id="txtEmail" alignment="0" min="-2" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="button1" min="-2" max="-2" attributes="0"/>
-                  <Component id="button2" min="-2" max="-2" attributes="0"/>
-                  <Component id="button3" min="-2" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace pref="20" max="32767" attributes="0"/>
+              <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -170,6 +185,9 @@
     <Component class="java.awt.TextArea" name="txaAddress">
     </Component>
     <Component class="java.awt.TextField" name="txtHomePhone">
+      <Events>
+        <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtHomePhoneKeyTyped"/>
+      </Events>
     </Component>
     <Component class="java.awt.Label" name="label2">
       <Properties>
@@ -177,35 +195,38 @@
       </Properties>
     </Component>
     <Component class="java.awt.TextField" name="txtCellPhone">
+      <Events>
+        <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtCellPhoneKeyTyped"/>
+      </Events>
     </Component>
     <Component class="java.awt.TextField" name="txtUsername">
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtUsernameActionPerformed"/>
-      </Events>
     </Component>
     <Component class="java.awt.TextField" name="txtEmail">
     </Component>
     <Component class="java.awt.TextField" name="txtPassword">
     </Component>
-    <Component class="java.awt.Button" name="button1">
+    <Component class="java.awt.Button" name="btnComfirm">
       <Properties>
         <Property name="label" type="java.lang.String" value="Comfirm"/>
         <Property name="name" type="java.lang.String" value="" noResource="true"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnComfirmActionPerformed"/>
+      </Events>
     </Component>
     <Component class="java.awt.Label" name="label5">
       <Properties>
         <Property name="text" type="java.lang.String" value="Comfirm Password"/>
       </Properties>
     </Component>
-    <Component class="java.awt.Button" name="button2">
+    <Component class="java.awt.Button" name="btnReset">
       <Properties>
         <Property name="label" type="java.lang.String" value="Reset"/>
       </Properties>
     </Component>
-    <Component class="java.awt.TextField" name="txtcmPassword">
+    <Component class="java.awt.TextField" name="txtCfmPassword">
     </Component>
-    <Component class="java.awt.Button" name="button3">
+    <Component class="java.awt.Button" name="btnCancel">
       <Properties>
         <Property name="label" type="java.lang.String" value="Cancel"/>
       </Properties>
@@ -258,8 +279,14 @@
     <Component class="java.awt.TextField" name="txtWorkingPosition">
     </Component>
     <Component class="java.awt.TextField" name="txtName">
+      <Events>
+        <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtNameKeyTyped"/>
+      </Events>
     </Component>
     <Component class="java.awt.TextField" name="txtIC">
+      <Events>
+        <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtICKeyTyped"/>
+      </Events>
     </Component>
     <Component class="java.awt.TextField" name="txtDOB">
     </Component>
