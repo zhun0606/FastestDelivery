@@ -45,7 +45,6 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="label1" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="label2" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="label5" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="label11" alignment="0" min="-2" max="-2" attributes="0"/>
@@ -57,6 +56,7 @@
                           <Component id="label15" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="label13" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="label14" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="label1" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
@@ -230,6 +230,9 @@
       <Properties>
         <Property name="label" type="java.lang.String" value="Cancel"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCancelActionPerformed"/>
+      </Events>
     </Component>
     <Component class="java.awt.Label" name="label7">
       <Properties>
