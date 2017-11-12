@@ -256,10 +256,6 @@ public class Register extends javax.swing.JFrame {
         return isChecked;
     }
     
-    
-    
-    
-    
     /**
      * @param args the command line arguments
      */
