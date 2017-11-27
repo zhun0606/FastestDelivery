@@ -4,10 +4,11 @@ import javax.swing.table.DefaultTableModel;
 
 public class ViewEmployee extends javax.swing.JFrame {
     DefaultTableModel model ;
-        Employee[] employee = new Employee[6];
+    Employee[] employee = new Employee[6];
         
     public ViewEmployee() {
         initComponents();
+        
         model =  (DefaultTableModel) jTable1.getModel();
         Employee[] employee = new Employee[6];
         employee[0] = new Employee("Emp01","Kelvin");
