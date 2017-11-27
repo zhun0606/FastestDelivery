@@ -394,7 +394,7 @@ public class Register extends javax.swing.JFrame {
         
         txtName.setText("");
         txtIC.setText("");
-        txtDOB.setText("");
+        jCalendar1.setDate(null);
         txtHomePhone.setText("");
         txtCellPhone.setText("");
         txtEmail.setText("");
@@ -411,7 +411,7 @@ public class Register extends javax.swing.JFrame {
         
         if(txtName.getText().equals("")) isChecked = false;
         if(txtIC.getText().equals("")) isChecked = false;
-        if(txtDOB.getText().equals("")) isChecked = false;
+        if(jCalendar1.getDate() == null) isChecked = false;
         if(txaAddress.getText().equals("")) isChecked = false;
         if(txtHomePhone.getText().equals("")) isChecked = false;
         if(txtCellPhone.getText().equals("")) isChecked = false;
