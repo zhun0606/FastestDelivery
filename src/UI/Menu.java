@@ -10,7 +10,6 @@ package UI;
  * @author khong
  */
 public class Menu extends javax.swing.JFrame {
-    ChangePassword password = new ChangePassword();
 
     /**
      * Creates new form Menu
