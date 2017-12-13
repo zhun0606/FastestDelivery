@@ -136,7 +136,7 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" attributes="0">
+          <Group type="102" alignment="0" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" max="-2" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
@@ -162,8 +162,6 @@
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="label2" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="label5" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="label11" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="label7" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="label8" alignment="0" min="-2" max="-2" attributes="0"/>
@@ -171,15 +169,13 @@
                           <Component id="label1" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="label12" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
                           <Component id="txtName" alignment="0" max="32767" attributes="0"/>
                           <Component id="txtWorkingPosition" alignment="0" max="32767" attributes="0"/>
                           <Component id="txtUsername" alignment="0" pref="200" max="32767" attributes="0"/>
                           <Component id="txtIC" alignment="0" min="-2" pref="125" max="-2" attributes="0"/>
-                          <Component id="txtPassword" alignment="1" max="32767" attributes="0"/>
-                          <Component id="txtCfmPassword" alignment="1" max="32767" attributes="0"/>
-                          <Component id="txtDOB" min="-2" pref="125" max="-2" attributes="0"/>
+                          <Component id="txtDOB" alignment="0" min="-2" pref="125" max="-2" attributes="0"/>
                           <Group type="102" alignment="0" attributes="0">
                               <Component id="jrbMale" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
@@ -203,16 +199,6 @@
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="label2" min="-2" max="-2" attributes="0"/>
-                  <Component id="txtPassword" min="-2" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="label5" min="-2" max="-2" attributes="0"/>
-                  <Component id="txtCfmPassword" alignment="0" min="-2" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="label11" alignment="0" min="-2" max="-2" attributes="0"/>
                   <Component id="txtWorkingPosition" alignment="0" min="-2" max="-2" attributes="0"/>
               </Group>
@@ -228,29 +214,29 @@
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="label9" min="-2" max="-2" attributes="0"/>
-                  <Component id="txtDOB" min="-2" max="-2" attributes="0"/>
+                  <Component id="label9" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtDOB" alignment="0" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="jrbFemale" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Component id="jrbMale" min="-2" max="-2" attributes="0"/>
-                  <Component id="label10" min="-2" max="-2" attributes="0"/>
+                  <Component id="jrbMale" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="label10" alignment="0" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="label12" min="-2" max="-2" attributes="0"/>
-                  <Component id="txaAddress" min="-2" pref="100" max="-2" attributes="0"/>
+                  <Component id="label12" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="txaAddress" alignment="0" min="-2" pref="100" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="txtEmail" min="-2" max="-2" attributes="0"/>
-                  <Component id="label15" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtEmail" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="label15" alignment="0" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="txtHomePhone" min="-2" max="-2" attributes="0"/>
-                  <Component id="label13" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtHomePhone" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="label13" alignment="0" min="-2" max="-2" attributes="0"/>
               </Group>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
@@ -264,9 +250,9 @@
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="btnComfirm" min="-2" max="-2" attributes="0"/>
-                  <Component id="btnReset" min="-2" max="-2" attributes="0"/>
-                  <Component id="btnCancel" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnComfirm" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnReset" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnCancel" alignment="0" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="32767" attributes="0"/>
           </Group>
@@ -274,16 +260,20 @@
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Component class="java.awt.TextArea" name="txaAddress">
-    </Component>
-    <Component class="java.awt.TextField" name="txtHomePhone">
-      <Events>
-        <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtHomePhoneKeyTyped"/>
-      </Events>
-    </Component>
-    <Component class="java.awt.Label" name="label2">
+    <Component class="javax.swing.JRadioButton" name="jrbMale">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Password"/>
+        <Property name="text" type="java.lang.String" value="Male"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JRadioButton" name="jrbFemale">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Female"/>
+        <Property name="toolTipText" type="java.lang.String" value=""/>
+      </Properties>
+    </Component>
+    <Component class="java.awt.Label" name="label1">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Username"/>
       </Properties>
     </Component>
     <Component class="java.awt.TextField" name="txtCellPhone">
@@ -295,6 +285,11 @@
     </Component>
     <Component class="java.awt.TextField" name="txtEmail">
     </Component>
+    <Component class="java.awt.TextField" name="txtDOB">
+      <Events>
+        <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtDOBKeyTyped"/>
+      </Events>
+    </Component>
     <Component class="java.awt.Button" name="btnComfirm">
       <Properties>
         <Property name="label" type="java.lang.String" value="Comfirm"/>
@@ -303,11 +298,6 @@
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnComfirmActionPerformed"/>
       </Events>
-    </Component>
-    <Component class="java.awt.Label" name="label5">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Comfirm Password"/>
-      </Properties>
     </Component>
     <Component class="java.awt.Button" name="btnReset">
       <Properties>
@@ -382,29 +372,11 @@
         <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtICKeyTyped"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JRadioButton" name="jrbMale">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Male"/>
-      </Properties>
+    <Component class="java.awt.TextArea" name="txaAddress">
     </Component>
-    <Component class="javax.swing.JRadioButton" name="jrbFemale">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Female"/>
-        <Property name="toolTipText" type="java.lang.String" value=""/>
-      </Properties>
-    </Component>
-    <Component class="java.awt.Label" name="label1">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Username"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JPasswordField" name="txtPassword">
-    </Component>
-    <Component class="javax.swing.JPasswordField" name="txtCfmPassword">
-    </Component>
-    <Component class="java.awt.TextField" name="txtDOB">
+    <Component class="java.awt.TextField" name="txtHomePhone">
       <Events>
-        <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtDOBKeyTyped"/>
+        <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtHomePhoneKeyTyped"/>
       </Events>
     </Component>
   </SubComponents>

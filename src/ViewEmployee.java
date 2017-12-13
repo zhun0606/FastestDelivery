@@ -4,25 +4,27 @@ import javax.swing.table.DefaultTableModel;
 
 public class ViewEmployee extends javax.swing.JFrame {
     DefaultTableModel model ;
-    Employee[] employee = new Employee[6];
+    static Employee[] employee = new Employee[6];
         
     public ViewEmployee() {
-        initComponents();
-        
+        initComponents(); 
         model =  (DefaultTableModel) jTable1.getModel();
-        Employee[] employee = new Employee[6];
-        employee[0] = new Employee("Emp01","Kelvin");
-        employee[1] = new Employee("Emp02","Bob");
-        employee[2] = new Employee("Emp03","Ceas");
-        employee[3] = new Employee("Emp04","Deab");
-        employee[4] = new Employee("Emp05","Eason");
-        employee[5] = new Employee("Emp06","Fogy");
+        //Employee[] employee = new Employee[6];
+        employee[0] = new Employee("Emp01","Kelvin","HR","Kelvin","97072502","25/12/1887","Male","","","","abc@gmail.com");
+        employee[1] = new Employee("Emp02","Bob","ACC","Bob","55464311","31/08/1983","Male","","","","abc@gmail.com");
+        employee[2] = new Employee("Emp03","Ceas","Salesman","Ceas","875202","13/02/1967","Male","","","","abc@gmail.com");
+        employee[3] = new Employee("Emp04","Deab","Salesman","Deab","64345040","07/05/1984","Male","","","","abc@gmail.com");
+        employee[4] = new Employee("Emp05","Eason","Inventory","Eason","4142852","15/08/1991","Male","","","","abc@gmail.com");
+        employee[5] = new Employee("Emp06","Fogy","PR","Fogy","12570241","23/02/1979","Male","","","","abc@gmail.com");
         
         for(int i =0; i < employee.length; i++){
             model.addRow(new Object[]{employee[i].getUsername(),employee[i].getPassword()});
         }
     }
-
+    
+    public Employee[] getList(){
+        return employee;
+    }
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -30,6 +32,7 @@ public class ViewEmployee extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         jButton1 = new javax.swing.JButton();
+        btnGo = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenuItem5 = new javax.swing.JMenuItem();
@@ -56,18 +59,22 @@ public class ViewEmployee extends javax.swing.JFrame {
                 "Employee ID", "Employee Name"
             }
         ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class
+            };
             boolean[] canEdit = new boolean [] {
                 false, false
             };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
                 return canEdit [columnIndex];
             }
         });
-        jTable1.setColumnSelectionAllowed(true);
-        jTable1.getTableHeader().setReorderingAllowed(false);
         jScrollPane1.setViewportView(jTable1);
-        jTable1.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
         if (jTable1.getColumnModel().getColumnCount() > 0) {
             jTable1.getColumnModel().getColumn(0).setResizable(false);
             jTable1.getColumnModel().getColumn(1).setResizable(false);
@@ -77,6 +84,13 @@ public class ViewEmployee extends javax.swing.JFrame {
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
+            }
+        });
+
+        btnGo.setText("Go");
+        btnGo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnGoActionPerformed(evt);
             }
         });
 
@@ -159,7 +173,8 @@ public class ViewEmployee extends javax.swing.JFrame {
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 435, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jButton1)
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnGo)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -168,9 +183,13 @@ public class ViewEmployee extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton1)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton1)
+                    .addComponent(btnGo))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
+
+        btnGo.getAccessibleContext().setAccessibleName("Go");
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -194,8 +213,22 @@ public class ViewEmployee extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem9ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+            this.setVisible(false);
+            new Menu().setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void btnGoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGoActionPerformed
+        final int row = jTable1.getSelectedRow();
+        final int column = jTable1.getSelectedColumn();
+        final String valueInCell = (String)jTable1.getValueAt(row, column);
+        
+        for(int i =0; i < employee.length; i++){
+            if(employee[i].getUsername().equals(valueInCell)){
+                new EditEmployee(employee[i]).setVisible(true);
+                this.setVisible(false);
+            }
+        }
+    }//GEN-LAST:event_btnGoActionPerformed
     
     public void DynRowAdd() {
     }
@@ -234,6 +267,7 @@ public class ViewEmployee extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnGo;
     private javax.swing.JButton jButton1;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
