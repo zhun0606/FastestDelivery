@@ -12,17 +12,14 @@ import domain.Food;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
 
-/**
- *
- * @author EdwinLoo
- */
+
 public class FoodMenu extends javax.swing.JFrame {
 
     private MaintainFood foodControl;
     static final String DATABASE_URL = "jdbc:derby://localhost:1527/FosDB";
     static final String USERNAME = "nbuser";
     static final String PASSWORD = "nbuser";
-    static final String DEFAULT_QUERY = "SELECT * FROM FOOD";
+    static final String DEFAULT_QUERY = "SELECT foodid as id, foodname as name, cast(foodprice as decimal(5,2)) as price FROM FOOD";
     private TableModelDA tableModel;
     
     public FoodMenu() {
@@ -180,92 +177,6 @@ public class FoodMenu extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-        if(jTextField2.getText().equals("") || jTextField3.getText().equals("")){
-            JOptionPane.showMessageDialog(null, "Please key in your Food Name and Price.", "***********", JOptionPane.INFORMATION_MESSAGE);
-        }
-        else{
-        Food food;
-        int id = 0;
-        double foodprice = Double.parseDouble(jTextField3.getText());
-        int fc = 0;
-        String name = jTextField2.getText();
-        int i = JOptionPane.showConfirmDialog(null,"Do you want to add new food?","Add New Food",JOptionPane.YES_NO_OPTION);
-                if(i == JOptionPane.YES_OPTION){
-                food = new Food(id,name,foodprice,fc);
-                foodControl.addRecord(food);
-                JOptionPane.showMessageDialog(null, "New Food Added", "New Food", JOptionPane.INFORMATION_MESSAGE);
-                searchFood();
-                jTextField1.setText("");
-                jTextField2.setText("");
-                jTextField3.setText("");
-                }
-        }
-    }//GEN-LAST:event_jButton1ActionPerformed
-
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        this.dispose();
-    }//GEN-LAST:event_jButton2ActionPerformed
-
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        if(jTextField1.getText().equals("")){
-            JOptionPane.showMessageDialog(null, "Please choose one food ", "**********************", JOptionPane.INFORMATION_MESSAGE);
-        }else{
-        int foods = Integer.parseInt(jTextField1.getText());
-        Food food = foodControl.selectRecord(foods);
-
-        if (food != null) {
-            int foodcount = food.getFoodcount();
-            int fc = 0;
-            fc += foodcount;
-            int i = JOptionPane.showConfirmDialog(null,"Do you want to update comment?","Update Feedback Reocrd",JOptionPane.YES_NO_OPTION);
-                if(i == JOptionPane.YES_OPTION){
-                food.setFoodName(jTextField2.getText());
-                food.setFoodPrice(Double.parseDouble(jTextField3.getText()));
-                food.setFoodcount(fc);
-                foodControl.updateRecord(food);          
-                JOptionPane.showMessageDialog(null, "Food Updated", "Updated", JOptionPane.INFORMATION_MESSAGE);
-                searchFood();
-                jTextField1.setText("");
-                jTextField2.setText("");
-                jTextField3.setText("");
-                }
-        } else {
-            JOptionPane.showMessageDialog(null, "No such food ID.", "RECORD NOT FOUND", JOptionPane.ERROR_MESSAGE);
-        }
-        }
-    }//GEN-LAST:event_jButton3ActionPerformed
-
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        if(jTextField1.getText().equals("")){
-            JOptionPane.showMessageDialog(null, "Please choose one food ", "**********************", JOptionPane.INFORMATION_MESSAGE);
-        }else{
-        int foods = Integer.parseInt(jTextField1.getText());
-        Food food = foodControl.selectRecord(foods);
-
-        if (food != null) {
-            int i = JOptionPane.showConfirmDialog(null, ("Food Details\nID : " + food.getFoodId() + "\nName : " + food.getFoodName() + "\nPrice : " + food.getFoodPrice()), "Delete Food Reocrd", JOptionPane.YES_NO_OPTION);
-            if (i == JOptionPane.YES_OPTION) {
-                foodControl.deleteRecord(food);
-                JOptionPane.showMessageDialog(null, "Food record deleted", "Delete Record", JOptionPane.INFORMATION_MESSAGE);
-                searchFood();
-                jTextField1.setText("");
-                jTextField2.setText("");
-                jTextField3.setText("");
-            }
-        }
-        }
-    }//GEN-LAST:event_jButton5ActionPerformed
-
-    private void jTextField3KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField3KeyTyped
-        // TODO add your handling code here:
-        char c =  evt.getKeyChar();
-        if(!(Character.isDigit(c) || (c==KeyEvent.VK_BACKSPACE)) || (c==KeyEvent.VK_DELETE)){
-            evt.consume();
-        }
-    }//GEN-LAST:event_jTextField3KeyTyped
-
     private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
         int index = jTable1.getSelectedRow();
         TableModelDA model = (TableModelDA) jTable1.getModel();
@@ -277,6 +188,92 @@ public class FoodMenu extends javax.swing.JFrame {
         jTextField2.setText(name);
         jTextField3.setText(price);
     }//GEN-LAST:event_jTable1MouseClicked
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        if(jTextField1.getText().equals("")){
+            JOptionPane.showMessageDialog(null, "Please choose one food ", "**********************", JOptionPane.INFORMATION_MESSAGE);
+        }else{
+            int foods = Integer.parseInt(jTextField1.getText());
+            Food food = foodControl.selectRecord(foods);
+
+            if (food != null) {
+                int i = JOptionPane.showConfirmDialog(null, ("Food Details\nID : " + food.getFoodId() + "\nName : " + food.getFoodName() + "\nPrice : " + food.getFoodPrice()), "Delete Food Reocrd", JOptionPane.YES_NO_OPTION);
+                if (i == JOptionPane.YES_OPTION) {
+                    foodControl.deleteRecord(food);
+                    JOptionPane.showMessageDialog(null, "Food record deleted", "Delete Record", JOptionPane.INFORMATION_MESSAGE);
+                    searchFood();
+                    jTextField1.setText("");
+                    jTextField2.setText("");
+                    jTextField3.setText("");
+                }
+            }
+        }
+    }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        if(jTextField1.getText().equals("")){
+            JOptionPane.showMessageDialog(null, "Please choose one food ", "**********************", JOptionPane.INFORMATION_MESSAGE);
+        }else{
+            int foods = Integer.parseInt(jTextField1.getText());
+            Food food = foodControl.selectRecord(foods);
+
+            if (food != null) {
+                int foodcount = food.getFoodCount();
+                int fc = 0;
+                fc += foodcount;
+                int i = JOptionPane.showConfirmDialog(null,"Do you want to update comment?","Update Feedback Reocrd",JOptionPane.YES_NO_OPTION);
+                if(i == JOptionPane.YES_OPTION){
+                    food.setFoodName(jTextField2.getText());
+                    food.setFoodPrice(Double.parseDouble(jTextField3.getText()));
+                    food.setFoodcount(fc);
+                    foodControl.updateRecord(food);
+                    JOptionPane.showMessageDialog(null, "Food Updated", "Updated", JOptionPane.INFORMATION_MESSAGE);
+                    searchFood();
+                    jTextField1.setText("");
+                    jTextField2.setText("");
+                    jTextField3.setText("");
+                }
+            } else {
+                JOptionPane.showMessageDialog(null, "No such food ID.", "RECORD NOT FOUND", JOptionPane.ERROR_MESSAGE);
+            }
+        }
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        this.dispose();
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        if(jTextField2.getText().equals("") || jTextField3.getText().equals("")){
+            JOptionPane.showMessageDialog(null, "Please key in your Food Name and Price.", "***********", JOptionPane.INFORMATION_MESSAGE);
+        }
+        else{
+            Food food;
+            int id = 0;
+            double foodprice = Double.parseDouble(jTextField3.getText());
+            int fc = 0;
+            String name = jTextField2.getText();
+            int i = JOptionPane.showConfirmDialog(null,"Do you want to add new food?","Add New Food",JOptionPane.YES_NO_OPTION);
+            if(i == JOptionPane.YES_OPTION){
+                food = new Food(id,name,foodprice,fc);
+                foodControl.addRecord(food);
+                JOptionPane.showMessageDialog(null, "New Food Added", "New Food", JOptionPane.INFORMATION_MESSAGE);
+                searchFood();
+                jTextField1.setText("");
+                jTextField2.setText("");
+                jTextField3.setText("");
+            }
+        }
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jTextField3KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField3KeyTyped
+        // TODO add your handling code here:
+        char c =  evt.getKeyChar();
+        if(!(Character.isDigit(c) || (c==KeyEvent.VK_BACKSPACE)) || (c==KeyEvent.VK_DELETE)){
+            evt.consume();
+        }
+    }//GEN-LAST:event_jTextField3KeyTyped
 
     /**
      * @param args the command line arguments

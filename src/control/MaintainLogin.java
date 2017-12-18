@@ -2,7 +2,7 @@
 package control;
 
 import da.LoginDA;
-import domain.Login;
+import domain.User;
 
 public class MaintainLogin{
 
@@ -12,19 +12,19 @@ public class MaintainLogin{
         loginDA = new LoginDA();
     }
 
-    public Login selectRecord(String userid) {
+    public User selectRecord(String userid) {
         return loginDA.getRecord(userid);
     }
 
-     public void addRecord(Login login) {
+     public void addRecord(User login) {
         loginDA.addRecord(login);
     }
      
-    public void updateRecord(Login login){
+    public void updateRecord(User login){
          loginDA.updateRecord(login);
      }
      
-     public void deleteRecord(Login login){
+     public void deleteRecord(User login){
          loginDA.deleteRecord(login);
      }
     

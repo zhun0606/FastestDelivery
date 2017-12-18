@@ -5,7 +5,7 @@
  */
 package UI;
 
-import domain.Login;
+import domain.User;
 import control.MaintainLogin;
 import javax.swing.JOptionPane;
 
@@ -167,7 +167,7 @@ public class LoginUI extends javax.swing.JFrame {
         String userid = String.valueOf(Userid.getText());
         String password = String.valueOf(Password.getText());
         
-        Login login = loginControl.selectRecord(userid);
+        User login = loginControl.selectRecord(userid);
         String menu = "Menu";
         
         if(login == null) {
@@ -176,7 +176,7 @@ public class LoginUI extends javax.swing.JFrame {
         else if(password == null ? login.getPassword() != null : !password.equals(login.getPassword())){
             JOptionPane.showMessageDialog(null, "Wrong Password!!!Please try again!!!", "RECORD NOT FOUND", JOptionPane.ERROR_MESSAGE);
         }
-        else{String id = login.getUserid();
+        else{String id = login.getUserId();
             new Menu().setVisible(true);
                 
                 this.setVisible(false);

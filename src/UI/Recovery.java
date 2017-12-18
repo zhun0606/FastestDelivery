@@ -1,7 +1,7 @@
 
 package UI;
 
-import domain.Login;
+import domain.User;
 import control.MaintainLogin;
 import javax.swing.JOptionPane;
 
@@ -154,7 +154,7 @@ public class Recovery extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        Login login = loginControl.selectRecord(userid.getText());
+        User login = loginControl.selectRecord(userid.getText());
         
         String Userid = String.valueOf(userid.getText());
         String Question = String.valueOf(jComboBox1.getSelectedItem().toString());
@@ -163,7 +163,7 @@ public class Recovery extends javax.swing.JFrame {
         if(login == null){              
             JOptionPane.showMessageDialog(null, "No such User ID.", "RECORD NOT FOUND", JOptionPane.ERROR_MESSAGE);
         } 
-        else if(Userid.equals(login.getUserid()) && Question.equals(login.getQuestion()) && Answer.equals(login.getAnswer())){
+        else if(Userid.equals(login.getUserId()) && Question.equals(login.getQuestion()) && Answer.equals(login.getAnswer())){
             JOptionPane.showMessageDialog(null, "This is your own password : " + login.getPassword(), "Password Recover",JOptionPane.INFORMATION_MESSAGE);
             this.setVisible(false);
             new LoginUI().setVisible(true);

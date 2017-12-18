@@ -3,59 +3,59 @@ package domain;
 import java.io.Serializable;
 
 public class Food implements Serializable {
-    private int foodid;
-    private String foodname;
-    private double foodprice;
-    private int foodcount;
+    private int foodId;
+    private String foodName;
+    private double foodPrice;
+    private int foodCount;
 
     public Food() {
     }
 
-    public Food(int foodid) {
-        this.foodid = foodid;
+    public Food(int foodId) {
+        this.foodId = foodId;
     }
 
-    public Food(int foodid, String foodname, double foodprice, int foodcount) {
-        this.foodid = foodid;
-        this.foodname = foodname;
-        this.foodprice = foodprice;
-        this.foodcount = foodcount;
+    public Food(int foodId, String foodName, double foodPrice, int foodCount) {
+        this.foodId = foodId;
+        this.foodName = foodName;
+        this.foodPrice = foodPrice;
+        this.foodCount = foodCount;
     }
 
     public int getFoodId() {
-        return foodid;
+        return foodId;
     }
     
-    public void setFoodId(int foodid) {
-        this.foodid = foodid;
+    public void setFoodId(int foodId) {
+        this.foodId = foodId;
     }
     
     public String getFoodName() {
-        return foodname;
+        return foodName;
     }
 
-    public void setFoodName(String foodname) {
-        this.foodname = foodname;
+    public void setFoodName(String foodName) {
+        this.foodName = foodName;
     }
     
     public double getFoodPrice() {
-        return foodprice;
+        return foodPrice;
     }
 
-    public void setFoodPrice(double foodprice) {
-        this.foodprice = foodprice;
+    public void setFoodPrice(double foodPrice) {
+        this.foodPrice = foodPrice;
     }
     
-    public int getFoodcount(){
-        return foodcount;
+    public int getFoodCount(){
+        return foodCount;
     }
 
-    public void setFoodcount(int foodcount){
-        this.foodcount = foodcount;
+    public void setFoodcount(int foodCount){
+        this.foodCount = foodCount;
     }
     
     @Override
     public String toString() {
-        return String.format("%-5s %-40s %.2f %d", foodid, foodname, foodprice, foodcount);
+        return String.format("%-5s %-40s %.2f %d", foodId, foodName, foodPrice, foodCount);
 }
 }

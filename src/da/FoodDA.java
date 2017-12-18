@@ -46,7 +46,7 @@ public class FoodDA {
               stmt=conn.prepareStatement(insertStr);
               stmt.setString(1,food.getFoodName());
               stmt.setDouble(2,food.getFoodPrice());
-              stmt.setInt(3,food.getFoodcount());
+              stmt.setInt(3,food.getFoodCount());
               stmt.executeUpdate();
 
         } catch (SQLException ex) {
@@ -61,7 +61,7 @@ public class FoodDA {
               stmt = conn.prepareStatement(updateStr);
               stmt.setString(1,food.getFoodName());
               stmt.setDouble(2,food.getFoodPrice());
-              stmt.setInt(3,food.getFoodcount());
+              stmt.setInt(3,food.getFoodCount());
               stmt.setInt(4,food.getFoodId());
 
               stmt.executeUpdate();
