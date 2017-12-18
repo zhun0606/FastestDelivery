@@ -5,6 +5,9 @@
  */
 package javaapplication2;
 
+import java.util.ArrayList;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author li ting
@@ -16,8 +19,62 @@ public class CheckStatus extends javax.swing.JFrame {
      */
     public CheckStatus() {
         initComponents();
+        addRowToJtblDeliveryMan();
     }
-
+    
+    public class Staff{
+        public String SID;
+        public String SName;
+        public String Status;
+        public String WorkingStatus;
+        
+        public Staff(String SID, String SName, String Status, String WorkingStatus){
+            this.SID = SID;
+            this.SName = SName;
+            this.Status = Status;
+            this.WorkingStatus = WorkingStatus;
+        }
+    }
+    
+    public ArrayList ListStaff(){
+        ArrayList<Staff> list = new ArrayList<Staff>();
+        Staff s1 = new Staff("D001", "aaa", "Clock In", "Delivery");
+        Staff s2 = new Staff("D002", "bbb", "Clock In", "Break");
+        Staff s3 = new Staff("D003", "ccc", "Clock In", "Available");
+        Staff s4 = new Staff("D004", "ddd", "Clock In", "Available");
+        Staff s5 = new Staff("D005", "eee", "Clock Out", null);
+        
+        list.add(s1);
+        list.add(s2);
+        list.add(s3);
+        list.add(s4);
+        list.add(s5);
+        
+        return list;
+    }
+    
+    public void addRowToJtblDeliveryMan(){
+        DefaultTableModel model = (DefaultTableModel) jtblDeliveryMan.getModel();
+        ArrayList<Staff> list = ListStaff();
+        Object rowData[] = new Object[4];
+        for(int i = 0; i < list.size(); i++){
+            rowData[0] = list.get(i).SID;
+            rowData[1] = list.get(i).SName;
+            rowData[2] = list.get(i).Status;
+            rowData[3] = list.get(i).WorkingStatus;
+            model.addRow(rowData);
+        }
+    }
+    
+    public void ClearJtblDeliveryMan(){
+        DefaultTableModel model = (DefaultTableModel) jtblDeliveryMan.getModel();
+        
+        while(model.getRowCount() > 0){
+            for(int i = 0; i < model.getRowCount(); i++){
+                model.removeRow(i);
+            } 
+        }
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -27,22 +84,18 @@ public class CheckStatus extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
-        jtxtStatus = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
         jtblDeliveryMan = new javax.swing.JTable();
+        jlblWorkingStatus = new javax.swing.JLabel();
+        jtxtWorkingStatus = new javax.swing.JTextField();
         jbtnCheck = new javax.swing.JButton();
+        jbtnShow = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setText("Woking Status");
-
         jtblDeliveryMan.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"D001", "abc", "Clock In", "Delivery"},
-                {"D002", "aaa", "Clock In", "Break"},
-                {"D003", "bbb", "Clock In", "Available"},
-                {"D004", "ddd", "Clock Out", null}
+
             },
             new String [] {
                 "ID", "Name", "Status", "Working Status"
@@ -50,7 +103,26 @@ public class CheckStatus extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(jtblDeliveryMan);
 
+        jlblWorkingStatus.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jlblWorkingStatus.setText("Working Status");
+
+        jtxtWorkingStatus.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+
+        jbtnCheck.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jbtnCheck.setText("Check");
+        jbtnCheck.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbtnCheckActionPerformed(evt);
+            }
+        });
+
+        jbtnShow.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jbtnShow.setText("Show All");
+        jbtnShow.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbtnShowActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -60,33 +132,63 @@ public class CheckStatus extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 372, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 380, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(76, 76, 76)
+                        .addGap(61, 61, 61)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jbtnCheck)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel1)
-                                .addGap(18, 18, 18)
-                                .addComponent(jtxtStatus, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap(18, Short.MAX_VALUE))
+                                .addComponent(jlblWorkingStatus)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jtxtWorkingStatus, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jbtnShow)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jbtnCheck)))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(43, 43, 43)
+                .addGap(36, 36, 36)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(jtxtStatus, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jlblWorkingStatus)
+                    .addComponent(jtxtWorkingStatus, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(jbtnCheck)
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(120, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jbtnCheck)
+                    .addComponent(jbtnShow))
+                .addGap(25, 25, 25)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(85, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jbtnCheckActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnCheckActionPerformed
+        DefaultTableModel model = (DefaultTableModel) jtblDeliveryMan.getModel();
+        ArrayList<Staff> list = ListStaff();
+        Object rowData[] = new Object[4];
+        
+        ClearJtblDeliveryMan();
+        
+        for(int i = 0; i < list.size(); i++){
+            if(list.get(i).WorkingStatus.equalsIgnoreCase(jtxtWorkingStatus.getText()))
+            {
+                rowData[0] = list.get(i).SID;
+                rowData[1] = list.get(i).SName;
+                rowData[2] = list.get(i).Status;
+                rowData[3] = list.get(i).WorkingStatus;
+                model.addRow(rowData);
+            }
+        }
+    }//GEN-LAST:event_jbtnCheckActionPerformed
+
+    private void jbtnShowActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnShowActionPerformed
+        ClearJtblDeliveryMan();
+        addRowToJtblDeliveryMan();
+    }//GEN-LAST:event_jbtnShowActionPerformed
 
     /**
      * @param args the command line arguments
@@ -124,10 +226,11 @@ public class CheckStatus extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JButton jbtnCheck;
+    private javax.swing.JButton jbtnShow;
+    private javax.swing.JLabel jlblWorkingStatus;
     private javax.swing.JTable jtblDeliveryMan;
-    private javax.swing.JTextField jtxtStatus;
+    private javax.swing.JTextField jtxtWorkingStatus;
     // End of variables declaration//GEN-END:variables
 }
